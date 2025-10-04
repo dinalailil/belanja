@@ -2,15 +2,15 @@
 
 A new Flutter project.
 
-## Getting Started
+#Tugas praktikum fluuter 2 yang tugas 2
 
-This project is a starting point for a Flutter application.
+1. membuat project belanja
+![screnshoot new project](images/01.png)
 
-A few resources to get you started if this is your first Flutter project:
+2. File ini berisi deklarasi class HomePage yang merupakan halaman utama aplikasi.
+Pada halaman ini, ditampilkan daftar barang (item) menggunakan ListView.builder.
+![screnshoot new project](images/02.png)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+3. Halaman pertama (Shopping List) tampil list Sugar & Salt dengan harga.Jika ditekan salah satu item, akan pindah ke halaman detail dengan format Sugar with 5000.
+![screnshoot new project](images/03.png)
+![screnshoot new project](images/04.png)
