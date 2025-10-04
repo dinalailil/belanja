@@ -8,17 +8,19 @@ class HomePage extends StatelessWidget {
 
   final List<Item> items = [
     Item(
-        name: 'Sugar',
-        price: 5000,
-        image: 'images/gula.jpg',
-        stock: 20,
-        rating: 4.5),
+      name: 'Sugar',
+      price: 5000,
+      image: 'images/gula.jpg',
+      stock: 20,
+      rating: 4.5,
+    ),
     Item(
-        name: 'Salt',
-        price: 2000,
-        image: 'images/salt.jpg',
-        stock: 35,
-        rating: 4.0),
+      name: 'Salt',
+      price: 2000,
+      image: 'images/salt.jpg',
+      stock: 35,
+      rating: 4.0,
+    ),
   ];
 
   @override
@@ -31,10 +33,10 @@ class HomePage extends StatelessWidget {
             child: GridView.builder(
               padding: const EdgeInsets.all(8),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                childAspectRatio: 0.7,
+                crossAxisCount: 2, // 2 kolom
                 crossAxisSpacing: 8,
                 mainAxisSpacing: 8,
+                childAspectRatio: 3 / 4, // Sesuaikan rasio sesuai kebutuhan
               ),
               itemCount: items.length,
               itemBuilder: (context, index) {
@@ -42,7 +44,7 @@ class HomePage extends StatelessWidget {
                 return ItemCard(
                   item: item,
                   onTap: () {
-                    context.go('/item', extra: item);
+                    context.push('/item', extra: item); //go_router
                   },
                 );
               },
@@ -52,7 +54,7 @@ class HomePage extends StatelessWidget {
             color: Colors.blueGrey.shade50,
             padding: const EdgeInsets.all(12),
             child: const Text(
-              "Dinarul Lailil M - 123456789", // Ganti NIM kamu
+              "Dinarul Lailil M - 2341760093",
               style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
             ),
           ),

@@ -13,18 +13,27 @@ class ItemPage extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
-          Hero(
+          Hero( //hero widget
             tag: item.name,
-            child: Image.network(item.image, height: 250, fit: BoxFit.cover),
+            child: Image.asset(item.image, height: 250, fit: BoxFit.cover),
           ),
           Padding(
             padding: const EdgeInsets.all(16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(item.name, style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold)),
+                Text(
+                  item.name,
+                  style: const TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
                 const SizedBox(height: 8),
-                Text("Rp ${item.price}", style: const TextStyle(fontSize: 20, color: Colors.green)),
+                Text(
+                  "Rp ${item.price}",
+                  style: const TextStyle(fontSize: 20, color: Colors.green),
+                ),
                 const SizedBox(height: 8),
                 Text("Stok tersedia: ${item.stock}"),
                 Row(
@@ -37,6 +46,40 @@ class ItemPage extends StatelessWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class ItemCard extends StatelessWidget {
+  final Item item;
+  final VoidCallback onTap;
+
+  const ItemCard({Key? key, required this.item, required this.onTap})
+    : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return InkWell(
+      onTap: onTap,
+      child: Card(
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              Expanded(
+                child: Image.asset(item.image, fit: BoxFit.cover, height: 100),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                item.name,
+                style: const TextStyle(fontWeight: FontWeight.bold),
+              ),
+              Text(item.price.toString(), textAlign: TextAlign.right),
+            ],
+          ),
+        ),
       ),
     );
   }
